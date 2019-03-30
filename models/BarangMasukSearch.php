@@ -26,11 +26,14 @@
                 ],
                 [
                     [
+                        'kode_barang',
                         'tanggal',
-                        'masukDari',
-                        'masukKe',
-                        'kodeBarang',
-                        'keterangan'
+                        'masuk_dari',
+                        'masuk_ke',
+                        'keterangan_jumlah',
+                        'keterangan',
+                        'created_by',
+                        'created_at'
                     ],
                     'safe'
                 ],
@@ -76,34 +79,36 @@
             // grid filtering conditions
             $query->andFilterWhere(
                 [
-                    'id' => $this->id,
-                    'jumlah' => $this->jumlah,
+                    'id'         => $this->id,
+                    'tanggal'    => $this->tanggal,
+                    'jumlah'     => $this->jumlah,
+                    'created_at' => $this->created_at,
                 ]
             );
 
             $query->andFilterWhere(
                 [
                     'like',
-                    'tanggal',
-                    $this->tanggal
+                    'kode_barang',
+                    $this->kode_barang
                 ]
             )->andFilterWhere(
                     [
                         'like',
-                        'masukDari',
-                        $this->masukDari
+                        'masuk_dari',
+                        $this->masuk_dari
                     ]
                 )->andFilterWhere(
                     [
                         'like',
-                        'masukKe',
-                        $this->masukKe
+                        'masuk_ke',
+                        $this->masuk_ke
                     ]
                 )->andFilterWhere(
                     [
                         'like',
-                        'kodeBarang',
-                        $this->kodeBarang
+                        'keterangan_jumlah',
+                        $this->keterangan_jumlah
                     ]
                 )->andFilterWhere(
                     [
@@ -111,6 +116,12 @@
                         'keterangan',
                         $this->keterangan
                     ]
+            )->andFilterWhere(
+                [
+                    'like',
+                    'created_by',
+                    $this->created_by
+                ]
                 );
 
             return $dataProvider;

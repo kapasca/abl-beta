@@ -8,12 +8,15 @@
      * This is the model class for table "barang_keluar".
      *
      * @property int    $id
+     * @property string $kode_barang
      * @property string $tanggal
-     * @property string $keluarDari
-     * @property string $keluarKe
-     * @property string $kodeBarang
+     * @property string $keluar_dari
+     * @property string $keluar_ke
      * @property int    $jumlah
+     * @property string $keterangan_jumlah
      * @property string $keterangan
+     * @property string $created_by
+     * @property string $created_at
      */
     class BarangKeluar extends \yii\db\ActiveRecord
     {
@@ -33,14 +36,23 @@
             return [
                 [
                     [
+                        'kode_barang',
                         'tanggal',
-                        'keluarDari',
-                        'keluarKe',
-                        'kodeBarang',
+                        'keluar_dari',
+                        'keluar_ke',
                         'jumlah',
-                        'keterangan'
+                        'keterangan_jumlah',
+                        'keterangan',
+                        'created_by'
                     ],
                     'required'
+                ],
+                [
+                    [
+                        'tanggal',
+                        'created_at'
+                    ],
+                    'safe'
                 ],
                 [
                     ['jumlah'],
@@ -48,17 +60,20 @@
                 ],
                 [
                     [
-                        'tanggal',
-                        'keluarDari',
-                        'keluarKe'
+                        'kode_barang',
+                        'keterangan_jumlah'
+                    ],
+                    'string',
+                    'max' => 100
+                ],
+                [
+                    [
+                        'keluar_dari',
+                        'keluar_ke',
+                        'created_by'
                     ],
                     'string',
                     'max' => 50
-                ],
-                [
-                    ['kodeBarang'],
-                    'string',
-                    'max' => 200
                 ],
                 [
                     ['keterangan'],
@@ -74,13 +89,16 @@
         public function attributeLabels()
         {
             return [
-                'id'         => 'ID',
-                'tanggal'    => 'Tanggal',
-                'keluarDari' => 'Keluar Dari',
-                'keluarKe'   => 'Keluar Ke',
-                'kodeBarang' => 'Kode Barang',
-                'jumlah'     => 'Jumlah',
-                'keterangan' => 'Keterangan',
+                'id'                => 'ID',
+                'kode_barang'       => 'Kode Barang',
+                'tanggal'           => 'Tanggal',
+                'keluar_dari'       => 'Keluar Dari',
+                'keluar_ke'         => 'Keluar Ke',
+                'jumlah'            => 'Jumlah',
+                'keterangan_jumlah' => 'Keterangan Jumlah',
+                'keterangan'        => 'Keterangan',
+                'created_by'        => 'Created By',
+                'created_at'        => 'Created At',
             ];
         }
     }

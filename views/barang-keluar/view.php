@@ -19,10 +19,13 @@
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', [
+        <?= Html::a(
+            'Update', [
             'update',
             'id' => $model->id
-        ], ['class' => 'btn btn-primary']
+        ], [
+                'class' => 'btn btn-primary'
+            ]
         ) ?>
         <?= Html::a(
             'Delete', [
@@ -43,12 +46,15 @@
             'model'      => $model,
             'attributes' => [
                 'id',
+                'kode_barang',
                 'tanggal',
-                'keluarDari',
-                'keluarKe',
-                'kodeBarang',
+                'keluar_dari',
+                'keluar_ke',
                 'jumlah',
+                'keterangan_jumlah',
                 'keterangan',
+                'created_by',
+                'created_at',
             ],
         ]
     ) ?>

@@ -12,17 +12,23 @@
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'tanggal')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'kode_barang')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'keluarDari')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'tanggal')->textInput() ?>
 
-    <?= $form->field($model, 'keluarKe')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'keluar_dari')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'kodeBarang')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'keluar_ke')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'jumlah')->textInput() ?>
 
+    <?= $form->field($model, 'keterangan_jumlah')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'keterangan')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'created_by')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'created_at')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

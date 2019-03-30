@@ -15,7 +15,7 @@
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Barang Masuk', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambahkan Barang Masuk', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,12 +28,15 @@
                 ['class' => 'yii\grid\SerialColumn'],
 
                 //'id',
+                'kode_barang',
                 'tanggal',
-                'masukDari',
-                //'masukKe',
-                'kodeBarang',
+                'masuk_dari',
+                //'masuk_ke',
                 'jumlah',
+                //'keterangan_jumlah',
                 //'keterangan',
+                //'created_by',
+                //'created_at',
 
                 ['class' => 'yii\grid\ActionColumn'],
             ],

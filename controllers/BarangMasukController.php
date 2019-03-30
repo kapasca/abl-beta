@@ -126,9 +126,7 @@
          * @param integer $id
          *
          * @return mixed
-         * @throws \Throwable
-         * @throws \yii\db\StaleObjectException
-         * @throws \yii\web\NotFoundHttpException if the model cannot be found
+         * @throws NotFoundHttpException if the model cannot be found
          */
         public function actionDelete($id)
         {

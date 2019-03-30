@@ -8,7 +8,8 @@
     $baseUrl = str_replace('/web', '', (new Request)->getBaseUrl());
 
     $config = [
-        'id'         => 'basic',
+        'id'         => 'abl-beta',
+        'name'       => 'Agarindo Biological Laboratory',
         'basePath'   => dirname(__DIR__),
         'bootstrap'  => ['log'],
         'aliases'    => [
